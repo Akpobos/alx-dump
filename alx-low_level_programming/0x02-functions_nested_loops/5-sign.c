@@ -2,7 +2,7 @@
 
 /**
  * print_sign - Print sign of a number
- * @n - Number to check
+ * @n:  Number to check
  *
  * Return: print sign and return number
  */
