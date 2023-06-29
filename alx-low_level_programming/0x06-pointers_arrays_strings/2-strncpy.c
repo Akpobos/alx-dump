@@ -10,7 +10,6 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	char *ptr = dest;
 	int c = 0;
 
 	while (c < n)
