@@ -12,6 +12,8 @@ char *_strchr(char *s, char c)
 	unsigned int i = 0;
 	char *p = 0;
 
+	if (*s == c)
+		return (s);
 	while (*(s + i))
 	{
 		if (*(s + i) == c)
