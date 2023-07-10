@@ -52,11 +52,12 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 	len += _strlen(s1);
 	len += _strlen(s2);
+	len += 1;
 	ptr = (char *)malloc(sizeof(char) * len);
 	_strcat(ptr, s1, cnt);
 	while (*(s1 + cnt))
 		cnt++;
 	_strcat(ptr, s2, cnt);
-	*(ptr + len + 1) = '\0';
+	*(ptr + len) = '\0';
 	return (ptr);
 }
