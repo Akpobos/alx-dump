@@ -28,7 +28,7 @@ void _strcpy(char *dest, char *src, unsigned int strt, unsigned int n)
 {
 	unsigned int i = 0;
 
-	while (i <= n && *(src + i))
+	while (i < n && src && *(src + i))
 	{
 		*(dest + strt + i) = *(src + i);
 		i++;
