@@ -50,13 +50,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (len == 0)
 		len = 1;
-	else
-		len += 1;
 	ptr = malloc(sizeof(*ptr) * len);
 	if (ptr == NULL)
 		return (NULL);
 	_strcpy(ptr, s1, 0, s1len);
 	_strcpy(ptr, s2, s1len, n);
-	*(ptr + (len - 1)) = '\0';
+	*(ptr + (len > 1 ? len : (len - 1))) = '\0';
 	return (ptr);
 }
