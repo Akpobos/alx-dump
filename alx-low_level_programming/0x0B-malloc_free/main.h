@@ -15,6 +15,8 @@ void _strcat(char *dest, char *src, unsigned int start);
 int **alloc_grid(int width, int height);
 void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
+int gtwdcnt(char *str);
+char **strtow(char *str);
 /* Prototypes - END */
 
 #endif /* MAIN_H */
