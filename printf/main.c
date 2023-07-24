@@ -32,7 +32,19 @@ int main(void)
     len2 = printf("Unknown:[%r]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("% % % %s\n", "Hello");
-    printf("% % % %s\n", "Hello");
+    len = _printf("% % % %s\n", "Hello");
+    len2 = printf("% % % %s\n", "Hello");
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+    len = _printf("Let's %c     try %% to printf %s a simple sentence.\n", 'B', "Hello");
+    len2 = printf("Let's %c     try %% to printf %s a simple sentence.\n", 'B', "Hello");
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+    _printf("S\"trin\\g:\'[%s]\n", "I am a string !");
+    printf("S\"trin\\g:\'[%s]\n", "I am a string !");
+    len = _printf("%s my name\n", NULL);
+    len2 = printf("%s my name\n", NULL);
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
     return (0);
 }
