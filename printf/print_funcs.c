@@ -45,10 +45,7 @@ int print_int(va_list args)
 	int val = va_arg(args, int), count = 0;
 
 	if (val < 0)
-	{
 		count += _putchar('-');
-		val = _abs(val);
-	}
-	count += print_numbers(val);
+	count += print_numbers(_abs(val));
 	return (count);
 }
