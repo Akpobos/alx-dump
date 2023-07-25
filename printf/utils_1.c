@@ -46,3 +46,49 @@ void fmt_space(const char *str, int *i)
 	while (str[*i] == ' ')
 		*i = *i + 1;
 }
+
+/**
+ * print_binary - Prints binary of a number
+ * @num: unsigned int number
+ *
+ * Return: printed count
+ */
+int print_binary(unsigned int num)
+{
+	int count = 0;
+
+	if (num > 0)
+	{
+		count += print_binary(num / 2);
+		count += _putchar((num % 2) + '0');
+	}
+	return (count);
+}
+
+/**
+ * check_specifier - Handles specifiers
+ * @c: The character
+ * @count: pointer print count
+ * @args: va_list argument
+ * Return: Nothing
+ */
+void check_specifier(const char c, int *count, va_list args)
+{
+	int is_fnd;
+
+	if (c == '%')
+	{
+		*count += _putchar(c);
+	}
+	else
+	{
+		is_fnd = print_fmt(c, args);
+		if (is_fnd < 0)
+		{
+			*count += _putchar('%');
+			*count += _putchar(c);
+		}
+		else
+			*count += is_fnd;
+	}
+}

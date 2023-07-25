@@ -22,21 +22,13 @@ int print_str(va_list args)
 	int i = 0;
 	char *str = va_arg(args, char *);
 
-	if (str)
+	if (!str)
+		str = "(null)";
+	while (str[i])
 	{
-		while (str[i])
-		{
-			_putchar(str[i]);
-			i++;
-		}
-		return (i);
+		_putchar(str[i]);
+		i++;
 	}
-	i += _putchar('(');
-	i += _putchar('n');
-	i += _putchar('u');
-	i += _putchar('l');
-	i += _putchar('l');
-	i += _putchar(')');
 	return (i);
 }
 
@@ -48,10 +40,23 @@ int print_str(va_list args)
  */
 int print_int(va_list args)
 {
-	int val = va_arg(args, int), count = 0;
-
+	int val = va_arg(args, int);
+	int count = 0;
+	
 	if (val < 0)
 		count += _putchar('-');
 	count += print_numbers(_abs(val));
 	return (count);
+}
+
+/**
+ * print_bnry - Prints binary
+ * @args: va_list argument
+ *
+ * Return: number of characer printed
+ */
+int print_bnry(va_list args)
+{
+	unsigned int val = va_arg(args, unsigned int);
+	return (print_binary(val));
 }
