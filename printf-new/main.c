@@ -16,6 +16,10 @@ int main(void)
     unsigned int ui;
     // void *addr;
 
+    len = _printf("Let's %c try %% to printf %s a simple sentence.\n", 'B', "Hello");
+    len2 = printf("Let's %c try %% to printf %s a simple sentence.\n", 'B', "Hello");
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
     len = _printf("Let's try %c %% to printf        a simple sentence. %s\n", 'A', NULL);
     len2 = printf("Let's try %c %% to printf        a simple sentence. %s\n", 'A', NULL);
     ui = (unsigned int)INT_MAX + 1024;
@@ -52,8 +56,10 @@ int main(void)
     // printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
-    _printf("Len:[%d]\n", len);
-    printf("Len:[%d]\n", len2);
+    _printf("Len:[%    d]\n", len);
+    printf("Len:[%    d]\n", len2);
+    // _printf("Len:[%d]\n", len);
+    // printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
     _printf("%S\n", "Best\nSchool");
