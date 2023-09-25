@@ -1,15 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+void recurr();
+
+void recurr(char *str)
+{
+	if (*str) {
+		putchar(*str);
+		recurr(str + 1);
+	}
+}
 
 int main(void)
 {
-	char *c = "\\n";
-	int i = 0;
-	putchar('a');
-	while (*(c + i))
-	{
-		putchar(*(c + i));
-		i++;
-	}
+
+	recurr("Hello");
+	putchar('\n');
 	exit(EXIT_SUCCESS);
 }
