@@ -9,7 +9,8 @@ pid_t create_child_process(char *sh_name)
 {
 	pid_t pid;
 
-	if ((pid = fork()) == -1)
+	pid = fork();
+	if (pid == -1)
 		perror(sh_name);
 	return (pid);
 }
