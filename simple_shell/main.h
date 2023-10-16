@@ -26,7 +26,7 @@ struct built_ins_s
 /* typedef */
 typedef struct built_ins_s built_ins_t;
 
-/* built_in_func.c */
+/* built-in-func.c */
 int exit_built_in(char *command[TOK_BUFSIZE]);
 
 /* prompt.c */
