@@ -7,9 +7,17 @@
  */
 int handle_built_ins(char *command[TOK_BUFSIZE])
 {
-	if (_strcmp(command[0], "exit") == 0)
+	built_ins_t built_ins[] = {
+		{ "exit", exit_built_in }
+	};
+	size_t i;
+
+	for (i = 0; i < 1; i++)
 	{
-		exit(EXIT_SUCCESS);
+		if (_strcmp(command[0], (built_ins + i)->built_in) == 0)
+		{
+			return ((built_ins + i)->handler(command));
+		}
 	}
 	return (-1);
 }
